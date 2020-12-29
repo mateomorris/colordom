@@ -1,0 +1,26 @@
+{
+  "name": "colordom",
+  "version": "0.0.1",
+  "description": "A thin wrapper over color.js which allows you to apply an image's dominant color to any DOM element's styles with just an image URL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateomorris/colordom.git"
+  },
+  "keywords": [
+    "color",
+    "extract",
+    "color",
+    "color",
+    "attributes"
+  ],
+  "author": "Mateo Morris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mateomorris/colordom/issues"
+  },
+  "homepage": "https://github.com/mateomorris/colordom#readme"
+}
