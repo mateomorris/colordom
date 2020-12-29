@@ -4,6 +4,8 @@
   "description": "A thin wrapper over color.js which allows you to apply an image's dominant color to any DOM element's styles with just an image URL",
   "main": "build/index.js",
   "scripts": {
+    "dev": "snowpack dev",
+    "build": "snowpack build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,6 +29,6 @@
     "snowpack": "^2.18.5"
   },
   "dependencies": {
-    "color.js": "^1.2.0"
+    "colorthief": "^2.3.2"
   }
 }

@@ -15,3 +15,12 @@ To prevent recomputing a color, it stores the color value after the first time i
 ```
 
 ![screenshot](./screenshot.png)
+
+## Scripts 
+### Development
+`npm run dev`
+### Build
+`npm run build` 
+### Publish
+`npm version x.x.x` 
+`npm publish`

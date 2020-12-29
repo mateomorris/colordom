@@ -1,6 +1,7 @@
-import { prominent } from 'color.js';
+import ColorThief from 'colorthief'
+const colorThief = new ColorThief();
 
-for (const style of ['backgroundColor','borderColor', 'color']) {
+['backgroundColor','borderColor', 'color'].forEach(style => {
   const nodes = document.querySelectorAll(`[color-${style}]`)
   for (const node of nodes) {
     const url = node.attributes[`color-${style}`].nodeValue
@@ -8,12 +9,28 @@ for (const style of ['backgroundColor','borderColor', 'color']) {
     if (existingColor) {
       node.style[style] = existingColor;
     } else {
-      prominent(url, { amount: 1 }).then(color => {
-        const [ r, g, b ] = color
-        const rgb = `rgb(${r},${g},${b})`
+      getColorFromURL(url, rgb => {
         node.style[style] = rgb;
         localStorage.setItem(`color--${url}`, rgb)
       })
     }
   }
+})
+
+function getColorFromURL(url, fn) {
+    var img = document.createElement("img"); 
+    img.src = url
+    img.crossOrigin = 'Anonymous'
+    if (img.complete) {
+    	fn(getRGB(img))
+    } else {
+        img.addEventListener('load', function() {
+    		  fn(getRGB(img))
+        });
+    }
+    function getRGB(img) {
+        const [ dominant ] = colorThief.getPalette(img)
+        const [ r, g, b ] = dominant
+        return `rgb(${r},${g},${b})`
+    }
 }
