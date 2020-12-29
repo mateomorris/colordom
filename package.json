@@ -1,6 +1,6 @@
 {
   "name": "colordom",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A thin wrapper over color.js which allows you to apply an image's dominant color to any DOM element's styles with just an image URL",
   "main": "build/index.js",
   "scripts": {
