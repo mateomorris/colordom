@@ -1,8 +1,9 @@
-import { prominent } from 'https://cdn.skypack.dev/color.js';
+import { prominent } from 'color.js';
 
-['backgroundColor','borderColor', 'color'].forEach(style => {
+for (const style of ['backgroundColor','borderColor', 'color']) {
   const nodes = document.querySelectorAll(`[color-${style}]`)
   for (const node of nodes) {
+    console.log(node)
     const url = node.attributes[`color-${style}`].nodeValue
     const existingColor = localStorage.getItem(`color--${url}`)
     if (existingColor) {
@@ -16,4 +17,4 @@ import { prominent } from 'https://cdn.skypack.dev/color.js';
       })
     }
   }
-})
+}
