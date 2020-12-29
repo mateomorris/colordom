@@ -3,7 +3,6 @@ import { prominent } from 'color.js';
 for (const style of ['backgroundColor','borderColor', 'color']) {
   const nodes = document.querySelectorAll(`[color-${style}]`)
   for (const node of nodes) {
-    console.log(node)
     const url = node.attributes[`color-${style}`].nodeValue
     const existingColor = localStorage.getItem(`color--${url}`)
     if (existingColor) {
