@@ -17,6 +17,27 @@ const colorThief = new ColorThief();
   }
 })
 
+export default function ColorDom(node, args) {
+  const { url, style } = args
+  console.log({node, url, style})
+  const existingColor = localStorage.getItem(`color--${url}`)
+  if (existingColor) {
+    node.style[style] = existingColor;
+  } else {
+    getColorFromURL(url, rgb => {
+      node.style[style] = rgb;
+      localStorage.setItem(`color--${url}`, rgb)
+    })
+  }
+
+  return {
+    destroy() {
+      // the node has been removed from the DOM
+    }
+  };
+
+}
+
 function getColorFromURL(url, fn) {
     var img = document.createElement("img"); 
     img.src = url
